@@ -8,6 +8,9 @@
   --primary-dark: #23b6bb;
   --primary-light: #eef2ff;
   --accent: #0d9488;
+  --primary-rgb: 84, 150, 72;
+  --primary-dark-rgb: 35, 182, 187;
+  --accent-rgb: 13, 148, 136;
   --radius-sm: 8px;
   --radius: 14px;
   --radius-lg: 20px;
@@ -32,7 +35,9 @@ html {
     scroll-behavior: auto;
   }
 
-  .section-inner {
+  .section-inner,
+  .service-card,
+  .project-card {
     opacity: 1;
     transform: none;
     transition: none;
@@ -102,8 +107,8 @@ button {
   margin: 0 auto;
   padding: 72px 32px;
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .section-inner.in-view,
@@ -370,6 +375,23 @@ button {
 }
 
 /* ---------- Home ---------- */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(640px circle at 12% 18%, rgba(var(--primary-rgb), 0.16), transparent 60%),
+    radial-gradient(560px circle at 88% 12%, rgba(var(--accent-rgb), 0.14), transparent 60%),
+    radial-gradient(720px circle at 50% 105%, rgba(var(--primary-dark-rgb), 0.12), transparent 60%);
+}
+
 .hero-section .section-inner {
   min-height: calc(100vh - 96px);
   display: flex;
@@ -488,7 +510,22 @@ button {
 
 .service-card {
   padding: 18px 20px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.section-inner.in-view .service-card {
+  opacity: 1;
+  transform: none;
+}
+
+.service-card:nth-child(1) { transition-delay: 0.05s; }
+.service-card:nth-child(2) { transition-delay: 0.12s; }
+.service-card:nth-child(3) { transition-delay: 0.19s; }
+.service-card:nth-child(4) { transition-delay: 0.26s; }
+.service-card:nth-child(5) { transition-delay: 0.33s; }
+.service-card:nth-child(6) { transition-delay: 0.4s; }
 
 .service-card h3 {
   display: flex;
@@ -537,10 +574,19 @@ button {
 
 .project-card {
   overflow: hidden;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
+  opacity: 0;
 }
+
+.section-inner.in-view .project-card {
+  opacity: 1;
+}
+
+.project-card:nth-child(1) { transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s; }
+.project-card:nth-child(2) { transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s; }
+.project-card:nth-child(3) { transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.19s; }
 
 .project-card:hover {
   transform: translateY(-5px);
