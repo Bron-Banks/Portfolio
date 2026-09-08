@@ -1,6 +1,6 @@
 import theCommons from "../assets/the-commons.jpg";
 import onlineMarketing from "../assets/online-marketing.png";
-import cuisineFinder from "../assets/cuisine-finder.svg";
+import cuisineFinder from "../assets/cuisine-finder.png";
 
 const projects = [
   {
