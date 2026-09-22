@@ -14,7 +14,7 @@ const serviceGroups = [
   {
     title: "Backend",
     icon: "fa-server",
-    skills: ["Node.js", "Express.js", "GraphQL", "REST APIs"],
+    skills: ["Node.js", "Express.js", "GraphQL", "REST APIs", "Spring"],
   },
   {
     title: "Databases",
@@ -24,12 +24,12 @@ const serviceGroups = [
   {
     title: "Tools & Platforms",
     icon: "fa-toolbox",
-    skills: ["AWS", "Azure", "Linux", "Git", "GitHub"],
+    skills: ["AWS", "Azure", "Linux", "Git", "GitHub", "Docker", "Postman", "Render"],
   },
   {
     title: "Methodologies",
     icon: "fa-arrows-rotate",
-    skills: ["Agile", "Software Testing", "Debugging", "CI/CD Fundamentals", "Linear"],
+    skills: ["Agile", "Software Testing", "Debugging", "CI/CD Pipeline", "Linear"],
   },
 ];
 
